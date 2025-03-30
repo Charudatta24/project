@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f2ed;
+            color: #333;
+        }
+        header, footer {
+            background-color: #6f4e37;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+        nav {
+            background-color: #4b3621;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px;
+            background-color: #d3a87c;
+            color: #fff;
+        }
+        .menu {
+            text-align: center;
+            padding: 20px;
+        }
+        .menu-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .menu-item {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            background: #fff;
+        }
+        .menu-item h3 {
+            margin: 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Coffee Shop</h1>
+        <p>Your perfect cup of coffee, every time!</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section class="hero" id="home">
+        <h1>Welcome to Coffee Shop</h1>
+        <p>Relax, sip, and enjoy the best coffee in town.</p>
+    </section>
+    <section class="menu" id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <h3>Filter Coffee</h3>
+                <p>Classic South Indian coffee.</p>
+                <p><strong>₹40</strong></p>
+            </div>
+            <div class="menu-item">
+                <h3>Masala Chai</h3>
+                <p>Tea infused with aromatic spices.</p>
+                <p><strong>₹30</strong></p>
+            </div>
+            <div class="menu-item">
+                <h3>Cold Coffee</h3>
+                <p>Refreshing chilled coffee.</p>
+                <p><strong>₹50</strong></p>
+            </div>
+            <div class="menu-item">
+                <h3>Elaichi Chai</h3>
+                <p>Tea flavored with cardamom.</p>
+                <p><strong>₹35</strong></p>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <p>Contact us at <a href="mailto:info@coffeeshop.com">info@coffeeshop.com</a></p>
+        <p>&copy; 2025 Coffee Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>

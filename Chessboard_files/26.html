@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minion Eyes</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: yellow;
+        }
+        .goggles-container {
+            display: flex;
+            gap: 20px;
+        }
+        .goggles {
+            width: 180px;
+            height: 180px;
+            background: silver;
+            border: 10px solid black;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .eye {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .pupil {
+            width: 40px;
+            height: 40px;
+            background: brown;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .inner-pupil {
+            width: 15px;
+            height: 15px;
+            background: black;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="goggles-container">
+        <div class="goggles">
+            <div class="eye">
+                <div class="pupil" id="pupil1">
+                    <div class="inner-pupil"></div>
+                </div>
+            </div>
+        </div>
+        <div class="goggles">
+            <div class="eye">
+                <div class="pupil" id="pupil2">
+                    <div class="inner-pupil"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("mousemove", (event) => {
+            document.querySelectorAll(".eye").forEach((eye, index) => {
+                const pupil = document.getElementById(`pupil${index + 1}`);
+                const eyeRect = eye.getBoundingClientRect();
+                const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+                const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+                const deltaX = event.clientX - eyeCenterX;
+                const deltaY = event.clientY - eyeCenterY;
+                const angle = Math.atan2(deltaY, deltaX);
+                const moveX = Math.cos(angle) * 15;
+                const moveY = Math.sin(angle) * 15;
+                pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

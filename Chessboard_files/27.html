@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashing Text</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            margin: 0;
+            color: white;
+            font-size: 3rem;
+            font-family: Arial, sans-serif;
+        }
+        @keyframes flash {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .flash-text {
+            animation: flash 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="flash-text">Flashing Text</div>
+</body>
+</html>
+

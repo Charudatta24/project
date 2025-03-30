@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Shapes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
+        canvas {
+            border: 2px solid black;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Draw Shapes</h1>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <div>
+        <button onclick="drawCircle()">Draw Circle</button>
+        <button onclick="drawRectangle()">Draw Rectangle</button>
+        <button onclick="drawTriangle()">Draw Triangle</button>
+    </div>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        function drawCircle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(200, 200, 50, 0, Math.PI * 2);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+            ctx.stroke();
+        }
+        function drawRectangle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "red";
+            ctx.fillRect(150, 150, 100, 100);
+            ctx.strokeRect(150, 150, 100, 100);
+        }
+        function drawTriangle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.moveTo(200, 100);
+            ctx.lineTo(250, 200);
+            ctx.lineTo(150, 200);
+            ctx.closePath();
+            ctx.fillStyle = "green";
+            ctx.fill();
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

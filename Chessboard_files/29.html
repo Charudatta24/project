@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Capture</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: wheat;
+            margin: 0;
+        }
+        video, canvas {
+            border: 2px solid black;
+            margin: 10px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <video id="webcam" width="400" height="300" autoplay></video>
+    <canvas id="snapshotCanvas" width="400" height="300"></canvas>
+    <div>
+        <button onclick="startWebcam()">Start</button>
+        <button onclick="pauseWebcam()">Pause</button>
+        <button onclick="takeSnapshot()">Snapshot</button>
+        <button onclick="startRecording()">Record</button>
+        <button onclick="stopRecording()">Stop</button>
+    </div>
+    <script>
+        let video = document.getElementById("webcam");
+        let canvas = document.getElementById("snapshotCanvas");
+        let ctx = canvas.getContext("2d");
+        let mediaRecorder;
+        let recordedChunks = [];
+        async function startWebcam() {
+            let stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            video.srcObject = stream;
+        }
+        function pauseWebcam() {
+            video.pause();
+        }
+        function takeSnapshot() {
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        }
+        function startRecording() {
+            recordedChunks = [];
+            let stream = video.srcObject;
+            mediaRecorder = new MediaRecorder(stream);         
+            mediaRecorder.ondataavailable = event => {
+                if (event.data.size > 0) {
+                    recordedChunks.push(event.data);
+                }
+            };         
+            mediaRecorder.onstop = () => {
+                let blob = new Blob(recordedChunks, { type: "video/webm" });
+                let url = URL.createObjectURL(blob);
+                let a = document.createElement("a");
+                a.href = url;
+                a.download = "recording.webm";
+                document.body.appendChild(a);
+                a.click();
+                URL.revokeObjectURL(url);
+            };    
+            mediaRecorder.start();
+        }
+        function stopRecording() {
+            if (mediaRecorder) {
+                mediaRecorder.stop();
+            }
+        }
+    </script>
+</body>
+</html>
+

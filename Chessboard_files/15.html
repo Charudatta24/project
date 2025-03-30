@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .path {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(6, 33, 108);
+            position: relative;
+            animation: Path 4s linear infinite;
+        }
+        @keyframes Path {
+            0% {
+                 top: 0; left: 0;
+                 }
+            25% {
+                 top: 0; left: 400px;
+                 }
+            50% {
+                 top: 200px; left: 400px; 
+                }
+            75% {
+                 top: 200px; left: 0;
+                 }
+            100% {
+                 top: 0; left: 0; 
+                }
+            100%{
+                rotate: 360deg;
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h><strong>23BRS1266 P.G.CHARU DATTA</strong></h>
+    <div class="path"></div>    
+</body>
+</html>

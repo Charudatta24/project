@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    padding: 15px 0;
+    text-align: center;
+    transition: 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: white;
+    color: #ff4b2b;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home {
+    background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+    color: white;
+}
+
+#projects {
+    background: #f4f4f4;
+}
+
+.project-list {
+    display: flex;
+    gap: 20px;
+}
+
+.project {
+    background: #ff4b2b;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.1);
+    background: #ff416c;
+}
+
+#about {
+    background: #222;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home" class="section">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Scroll down to explore my projects and learn more about me.</p>
+    </section>
+    
+    <section id="projects" class="section">
+        <h1>My Projects</h1>
+        <div class="project-list">
+            <div class="project" onclick="openProject('https://example.com/project1')">Project 1</div>
+            <div class="project" onclick="openProject('https://example.com/project2')">Project 2</div>
+            <div class="project" onclick="openProject('https://example.com/project3')">Project 3</div>
+        </div>
+    </section>
+    
+    <section id="about" class="section">
+        <h1>About Me</h1>
+        <p>Hi, I'm a passionate developer specializing in web and software development. I love coding and creating new projects.</p>
+    </section>
+    
+    <script>
+        function openProject(url) {
+    window.open(url, '_blank');
+}
+
+window.addEventListener('scroll', function() {
+    let nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.style.background = '#222';
+    } else {
+        nav.style.background = 'linear-gradient(to right, #ff416c, #ff4b2b)';
+    }
+});
+
+    </script>
+</body>
+</html>

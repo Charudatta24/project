@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            border: 2px solid black;
+        }
+        td {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .white {
+            background-color: white;
+        }
+        .black {
+            background-color: teal;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- Row 1 -->
+        <tbody><tr>
+            <td class="black"><img src="Chessboard_files/Untitled.htm" alt="Black Rook"></td>
+            <td class="white"><img src="Chessboard_files/knight_black.png" alt="Black Knight"></td>
+            <td class="black"><img src="Chessboard_files/bishop_black.png" alt="Black Bishop"></td>
+            <td class="white"><img src="Chessboard_files/queen_black.png" alt="Black Queen"></td>
+            <td class="black"><img src="Chessboard_files/king_black.png" alt="Black King"></td>
+            <td class="white"><img src="Chessboard_files/bishop_black.png" alt="Black Bishop"></td>
+            <td class="black"><img src="Chessboard_files/knight_black.png" alt="Black Knight"></td>
+            <td class="white"><img src="Chessboard_files/rook_black.png" alt="Black Rook"></td>
+        </tr>
+        <!-- Row 2 -->
+        <tr>
+            <td class="white"><img src="Chessboard_files/pawn_black.png" alt="Black Pawn"></td>
+            <td class="black"><img src="Chessboard_files/pawn_black.png" alt="Black Pawn"></td>
+            <td class="white"><img src="Chessboard_files/pawn_black.png" alt="Black Pawn"></td>
+            <td class="black"><img src="Chessboard_files/pawn_black.png" alt="Black Pawn"></td>
+            <td class="white"><img src="Chessboard_files/pawn_black.png" alt="Black Pawn"></td>
+            <td class="black"><img src="Chessboard_files/pawn_black.png" alt="Black Pawn"></td>
+            <td class="white"><img src="Chessboard_files/pawn_black.png" alt="Black Pawn"></td>
+            <td class="black"><img src="Chessboard_files/pawn_black.png" alt="Black Pawn"></td>
+        </tr>
+        <!-- Rows 3 to 6 -->
+        <tr>
+            <td class="black"></td><td class="white"></td>
+            <td class="black"></td><td class="white"></td>
+            <td class="black"></td><td class="white"></td>
+            <td class="black"></td><td class="white"></td>
+        </tr>
+        <tr>
+            <td class="white"></td><td class="black"></td>
+            <td class="white"></td><td class="black"></td>
+            <td class="white"></td><td class="black"></td>
+            <td class="white"></td><td class="black"></td>
+        </tr>
+        <tr>
+            <td class="black"></td><td class="white"></td>
+            <td class="black"></td><td class="white"></td>
+            <td class="black"></td><td class="white"></td>
+            <td class="black"></td><td class="white"></td>
+        </tr>
+        <tr>
+            <td class="white"></td><td class="black"></td>
+            <td class="white"></td><td class="black"></td>
+            <td class="white"></td><td class="black"></td>
+            <td class="white"></td><td class="black"></td>
+        </tr>
+        <!-- Row 7 -->
+        <tr>
+            <td class="white"><img src="Chessboard_files/pawn_white.png" alt="White Pawn"></td>
+            <td class="black"><img src="Chessboard_files/pawn_white.png" alt="White Pawn"></td>
+            <td class="white"><img src="Chessboard_files/pawn_white.png" alt="White Pawn"></td>
+            <td class="black"><img src="Chessboard_files/pawn_white.png" alt="White Pawn"></td>
+            <td class="white"><img src="Chessboard_files/pawn_white.png" alt="White Pawn"></td>
+            <td class="black"><img src="Chessboard_files/pawn_white.png" alt="White Pawn"></td>
+            <td class="white"><img src="Chessboard_files/pawn_white.png" alt="White Pawn"></td>
+            <td class="black"><img src="Chessboard_files/pawn_white.png" alt="White Pawn"></td>
+        </tr>
+        <!-- Row 8 -->
+        <tr>
+            <td class="black"><img src="Chessboard_files/rook_white.png" alt="White Rook"></td>
+            <td class="white"><img src="Chessboard_files/knight_white.png" alt="White Knight"></td>
+            <td class="black"><img src="Chessboard_files/bishop_white.png" alt="White Bishop"></td>
+            <td class="white"><img src="Chessboard_files/queen_white.png" alt="White Queen"></td>
+            <td class="black"><img src="Chessboard_files/king_white.png" alt="White King"></td>
+            <td class="white"><img src="Chessboard_files/bishop_white.png" alt="White Bishop"></td>
+            <td class="black"><img src="Chessboard_files/knight_white.png" alt="White Knight"></td>
+            <td class="white"><img src="Chessboard_files/rook_white.png" alt="White Rook"></td>
+        </tr>
+    </tbody></table>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

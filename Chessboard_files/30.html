@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Flashlight</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: burlywood;
+            margin: 0;
+        }
+        button {
+            margin: 10px;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toggleFlashlight()">Toggle Flashlight</button>
+    <script>
+        let flashlightOn = false;
+        async function toggleFlashlight() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+                const track = stream.getVideoTracks()[0];
+                const capabilities = track.getCapabilities();
+                
+                if (capabilities.torch) {
+                    flashlightOn = !flashlightOn;
+                    await track.applyConstraints({ advanced: [{ torch: flashlightOn }] });
+                } else {
+                    alert("Flashlight is not supported on this device.");
+                }
+            } catch (error) {
+                console.error("Error accessing flashlight:", error);
+                alert("Could not access flashlight.");
+            }
+        }
+    </script>
+</body>
+</html>
