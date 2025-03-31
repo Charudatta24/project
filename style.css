@@ -6,18 +6,6 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #FFF8F1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 .navbar {
     display: flex;
     align-items: center;
@@ -30,20 +18,12 @@ body {
     z-index: 1000;
     transition: all 0.8s ease-in-out;
 }
-
-
-
 .navbar.scrolled {
-    transform: scale(1.05); /* Slightly increases size */
-    padding: 15px 0; /* Adjust padding */
-    background-color: #4a3a32; /* Slightly darker */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+    transform: scale(1.05); 
+    padding: 15px 0; 
+    background-color: #4a3a32; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
 }
-
-
-
-
-
 .logo {
     padding: 0 9rem;
 }
@@ -51,14 +31,12 @@ body {
     color: #FFF8F1;
 }
 .logo-heading {
-    font-size: 1.5rem; /* Default size */
-    transition: transform 0.8s ease-in-out; /* Smooth scaling effect */
+    font-size: 1.5rem; 
+    transition: transform 0.8s ease-in-out; 
 }
-
 .logo-heading:hover {
-    transform: scale(1.3); /* Scales up by 10% */
+    transform: scale(1.3); 
 }
-
 .menu {
     padding: 0 5rem;
 }
@@ -82,14 +60,11 @@ body {
         padding: 0.5rem 0.3rem;
     }
 }
-/* Apply initial hidden state */
 .reveal {
     opacity: 0;
-    transform: translateY(40px); /* Moves the section down slightly */
+    transform: translateY(40px); 
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
-
-/* When in viewport, smoothly fade in */
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
@@ -109,7 +84,6 @@ body {
     justify-content: start;
     margin: 4.8rem 0;
 }
-
 .hero .intro {
     text-align: center;
     margin: 0 5rem;
@@ -121,21 +95,19 @@ body {
     justify-content: space-evenly;
 }
 .about {
-    display: flex; /* Enables flexbox */
-    align-items: center; /* Centers vertically */
-    justify-content: center; /* Centers horizontally */
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
     background-color: #FFF8F1;
     width: 100%;
     text-align: center;
 }
-
 .about .about-text {
     width: 450px;
     color: black;
     padding: 5rem 1rem;
     text-align: center;
 }
-
 .about .about-image img {
     height: 400px;
     width: 450px;
@@ -145,56 +117,42 @@ body {
     margin: 4.8rem 0;
     padding: 0 5rem;
 }
-
-
-
-
 .rereveal {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .rereveal.hidden {
     opacity: 0;
     transform: translateY(30px);
 }
-
 .rereveal.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-
 .port-card {
-    width: 30px;  /* Set a fixed width */
-    height: 50px; /* Set a fixed height */
+    width: 30px;  
+    height: 50px; 
     padding: 20px;
-    background: #fff; /* Background color */
-    border-radius: 20px; /* Optional: Slightly rounded corners */
+    background: #fff; 
+    border-radius: 20px; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 2px solid #9e8369; /* Ensure the border is visible */
+    border: 2px solid #9e8369; 
 }
-
-
-
-
 .my-row {
     display: flex;
-    flex-direction: column;  /* Change to vertical layout */
+    flex-direction: column;  
     align-items: center;
-    gap: 2rem; /* Space between items */
+    gap: 2rem; 
 }
-
 .my-row .my-col {
-    width: 35%; /* Adjust width for better spacing */
+    width: 35%; 
     text-align: center;
     cursor: pointer;
 }
-
 .my-card {
     text-align: center;
     display: flex;
@@ -210,18 +168,15 @@ body {
     transform: translateX(-100px);
 }
 
-/* Slide in from right */
 .my-col:nth-child(even) {
     transform: translateX(100px);
 }
-/* Scroll animation */
 .hidden {
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.6s ease-in-out;
 
 }
-
 .show {
     opacity: 1;
     transform: translateY(0);
@@ -247,48 +202,39 @@ body {
 .contact {
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Centers vertically */
-    align-items: center;      /* Centers horizontally */
-    height: 100vh;            /* Full viewport height */
+    justify-content: center;  
+    align-items: center;      
+    height: 100vh;           
     padding: 20px;
     text-align: center;
 }
-
 .contact-content {
     display: flex;
-    justify-content: space-between; /* Places items on opposite sides */
-    align-items: center;            /* Aligns vertically */
+    justify-content: space-between; 
+    align-items: center;          
     width: 80%;
-    max-width: 1000px;              /* Limits max width */
-    margin-top: 20px;               /* Space below heading */
+    max-width: 1000px;           
+    margin-top: 20px;              
 }
-
-
 .contact-form-container, .contact-details {
-    width: 45%; /* Adjust for spacing */
+    width: 45%; 
 }
-
 .contact-form {
     display: flex;
     flex-direction: column;
 }
-
 .contact-form .form-controls {
     width: 80%;
     padding: 10px 0;
     margin: 1.67rem 0;
     border-radius: 20px;
 }
-
 .contact-form .form-btn {
-
     width: 75%;
 }
-
 .contact-details {
     width: 50%;
 }
-
 .footer {
     background-color: #5A4A42;
     color: #fff;
@@ -304,38 +250,23 @@ body {
     border-radius: 50%;
     background-color: #5A4A42;
     transition: transform 0.7s ease-out;
-   
-    
-
 }
-
 .footer-list-items:hover {
-    transform: scale(1.5); /* Slowly expands by 30% */
+    transform: scale(1.5); 
 }
-
-
-
-
-
 .social-links {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .footer-links {
     font-size: 24px;
     color: #fff;
-    text-decoration: none;
-   
-   
+    text-decoration: none;   
 }
 .footer-links i {
     font-size: 1.5rem; 
 }
-
-
-
 .footer-menu {
     padding: 0 5rem;
 }
@@ -377,7 +308,6 @@ body {
     cursor: pointer;
     letter-spacing: 1px;
     border: none;
-    
 }
 .common-btn {
     background-color: #5A4A42;
@@ -391,7 +321,6 @@ body {
     border: 2px solid black;
     outline: none;
 }
-
 .heading-span {
     font-weight: bolder;
 }
@@ -450,16 +379,13 @@ body {
         text-align: center;
         width: 35%;
     }
-    
-
 }
 @media screen and (min-width: 280px) and (max-width: 576px) {
     .hero {
         justify-content: center;
         color: #fff;
         background-image: radial-gradient(circle, rgb(15 14 14 / 30%), rgb(102 96 96 / 40%), rgb(163 160 160 / 16%)), url('./Images/heroImg3.avif')
-    }
-    
+    }    
     .sub-heading {
         color: #fff9f9cc;
     }
